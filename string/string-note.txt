@@ -1,0 +1,86 @@
+single character---char
+Multiple character---char Array
+String--class---built-in methods
+--------------------------------------------------------------------------------------------
+		         			 Type of Operation on String Data
+		                    ---------------------------------
+
+-----------------			                          -----------------
+1) ImmutableWay				                            2) MutableWay
+-----------------			                          -----------------
+===>String(Class)		                           	  ===>StringBuilder(Class)	
+===>String(Class)(ImmutableWay):-                     ===>StringBuffer(Class)--Threadsafe
+
+
+---------------------------------------------------------------------------------
+
+                            Object Equality:-
+ -------------------------------------------------------------------------------
+	1) By reference(==)		2) By Value(.equals())
+	------------------		-----------------------	
+---------------------------------------------------------------------------------
+	System.out.println(name1==name2);// true
+
+
+
+	1) By String LiteralWay[RAM-----"HEAP"-------"SCP"[String Constant Pool]]:-
+	-------------------------------------------------------------------------------
+		String name1 = "Royal";
+		String name2 = "Royal";
+		String name3 = "technosoft";
+		String name4 = "technosoft";
+
+		//name1 = "abc";		
+		//name2 = "technosoft";
+		//String name5 = "royal";
+
+
+
+||||=========================================================================================================|
+                                                  "SCP"
+||||=========================================================================================================|
+||||What is the String Constant Pool?                                                                        |
+||||                                                                                                         |
+||||It is a part of the heap memory where Java stores string literals.                                       |
+||||When a string literal is created, Java checks if the same literal already exists in the SCP.             |
+||||If it exists, the new reference points to the existing literal.                                          |
+||||If it does not exist, a new literal is created in the SCP.                                               |
+||||                                                                                                         |
+||||=========================================================================================================
+
+
+
+
+===============================================================================================================
+                                             The hashCode()
+===============================================================================================================
+ method in Java is used to generate an integer value (called a hash code)
+ for an object. This value is calculated based on the object's internal data and is commonly used 
+ in hash-based collections like HashMap, HashSet, and Hashtable.
+===============================================================================================================
+
+	2) By 'new' keyword Way[RAM----"Heap"]:-
+------------------------------------------------------------------------------------------
+		
+		String name1 = new String("Royal");
+		String name2 = new String("Royal");
+	    System.out.println(name1==name2);// false
+	    System.out.println(name1.equals(name2));// true
+----------------------------------------------------------------------------------------------
+
+               Types of String Operations
+Java provides two types of operations on string data:
+
+Immutable Operations (Using String class)
+Mutable Operations (Using StringBuilder and StringBuffer classes)
+
+
+Immutable Operations:-
+Strings in Java are immutable, meaning their content cannot be changed after they are created.
+Modifying a String creates a new object instead of changing the original.
+
+
+Mutable Operations:-
+StringBuilder and StringBuffer allow modifications of string content without creating new objects.
+StringBuilder: Not thread-safe (faster in single-threaded applications).
+StringBuffer: Thread-safe (slightly slower due to synchronization).
